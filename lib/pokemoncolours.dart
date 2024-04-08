@@ -13,7 +13,7 @@ class PokemonColours {
     'Flying': Colors.blueGrey[800]!,
     'Fighting': Colors.red[900]!,
     'Psychic': Colors.purple[400]!,
-    'Rock': Color.fromARGB(140, 228, 215, 210),
+    'Rock': const Color.fromARGB(140, 228, 215, 210),
     'Steel': Colors.blueGrey[400]!,
     'Ghost': Colors.black26,
     'Ice': Colors.blue[50]!,
