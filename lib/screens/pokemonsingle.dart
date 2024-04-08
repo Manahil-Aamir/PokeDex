@@ -32,7 +32,7 @@ Widget infoText(String value){
     children: [
       Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w400,
               fontSize: 18,
