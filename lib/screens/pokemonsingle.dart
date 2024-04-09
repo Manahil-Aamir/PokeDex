@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.dart';
 
@@ -133,6 +134,66 @@ class _PokemonSingleState extends State<PokemonSingle> {
                       ],
                     ),
                   ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20 ,0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                        widget.pokemon.name,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 32,
+                          fontWeight: FontWeight.w800
+                        )
+                      ),
+                      const Spacer(),
+                      Text(
+                        '#${widget.pokemon.num}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 26,
+                        )
+                      ),
+                      ]
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.transparent.withOpacity(0.25),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(5, 7, 5, 7),
+                            child: Text(
+                              widget.pokemon.type.join(', '),
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),),
+                            )
+                        )
+                      ],
+                    ),
+                    //const SizedBox(height: 40),
+                    SizedBox(
+                      height: 250,
+                      width: 250,
+                      child: Hero(tag: '${widget.pokemon.id}image', 
+                      child: Expanded(
+                        child: CachedNetworkImage(
+                          imageUrl: widget.pokemon.img,
+                          fit: BoxFit.contain,
+                          placeholder: (context, url) => const CircularProgressIndicator(),
+                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                          ),
+                      ),
+                      ),
+                    )
+                  ]
                 ),
               ),
             
