@@ -54,9 +54,9 @@ class _PokemonAllState extends State<PokemonAll> {
                     itemCount: pokemons.length,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 4.0,
-                      mainAxisSpacing: 4.0,
-                      childAspectRatio: 6.5/4.5,
+                      crossAxisSpacing: 2.0,
+                      mainAxisSpacing: 2.0,
+                      childAspectRatio: 4.1/3,
                     ),
                     itemBuilder: (context, index) {
                       final pokemon = pokemons[index];
@@ -67,7 +67,10 @@ class _PokemonAllState extends State<PokemonAll> {
                             MaterialPageRoute(builder: (context) => PokemonSingle(pokemon: pokemon,)),
                           );
                         },
-                        child: Card(
+                        child: Card(      
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),                 
                           color: PokemonColours.getColorForType(pokemon.type[0]),
                           child: Stack(
                             children: [
